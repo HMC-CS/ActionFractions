@@ -21,6 +21,7 @@ typedef enum alienStateTypes {
     double direction;
     AlienState state;
 }
+@property bool guessedWrong;
 @property bool isTouched;
 @property (nonatomic, retain) CCAction * moveAction;
 @property (nonatomic, retain) CCAction * stareAction;
