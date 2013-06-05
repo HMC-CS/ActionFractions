@@ -15,8 +15,8 @@
     CCLabelTTF * label;
     CGPoint position;
 }
-@property(retain) CCSprite * sprite;
-@property(retain) Fraction * value;
+@property(strong) CCSprite * sprite;
+@property(strong) Fraction * value;
 
 -(id) initWithValue:(Fraction*) f andPosition:(CGPoint) pos;
 -(void) updateLabel;

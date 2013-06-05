@@ -46,8 +46,9 @@ const int LABELFONTSIZE = 30;
 	// 'layer' is an autorelease object.
 	BetaGameLayer *layer = [BetaGameLayer alloc];
 	layer->LEVEL = level;
-    [[layer init] autorelease];
-	// add layer as a child to scene
+    //[[layer init] autorelease];
+	[layer init];
+    // add layer as a child to scene
 	[scene addChild: layer];
 	
 	// return the scene
@@ -266,7 +267,6 @@ const int LABELFONTSIZE = 30;
     Fraction *current = [[Fraction alloc] initWithLvl:LEVEL];
     for (int j=0; j<numAlien; j++)
         if ([aliens[j].value exactlyEquals:current]) {
-            [current release];
             return [self newFractionThroughAlien: numAlien];
         }
     
