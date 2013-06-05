@@ -19,7 +19,7 @@
 @property(retain) Fraction * value;
 
 -(id) initWithValue:(Fraction*) f andPosition:(CGPoint) pos;
-
+-(void) updateLabel;
 -(void) updatePosition:(ccTime) dt;
 -(void) updatePosition:(ccTime) dt givenBounds:(CGSize) bounds;
 -(void) updateValue:(Fraction*) newValue;

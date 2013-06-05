@@ -49,4 +49,8 @@
 }
 
 
+-(void)updatePosition:(ccTime)dt givenBounds:(CGSize)bounds
+{
+    
+}
 @end
