@@ -152,8 +152,9 @@ const int LABELFONTSIZE = 30;
 -(void) setup: (int) numAliens AliensWithLevel: (int) Level {
     for(int i =0; i < NUMALIENS; ++i) {
         aliens[i] = [[Alien alloc] initWithValue:[self newFractionThroughAlien: i] andPosition:
-                     CGPointMake(arc4random() % (int)alienLayer.contentSize.width, arc4random() % (int)alienLayer.contentSize.height )];
+                     CGPointMake((arc4random() % (int)alienLayer.contentSize.width- alienImage.boundingBox.size.width)+alienImage.boundingBox.size.width, (arc4random() % (int)alienLayer.contentSize.height- alienImage.boundingBox.size.height )+ alienImage.boundingBox.size.height)];
         [alienLayer addChild: aliens[i] ];
+        //[self checkAliensBounds:aliens[i]];
     }
 }
 
@@ -253,11 +254,34 @@ const int LABELFONTSIZE = 30;
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
 
+    
 }
 
 -(void) ccTouchCancelled:(NSSet *)touch withEvent:(UIEvent *)event
 {
 
+}
+
+-(void) checkAliensBounds: (Alien*) alien
+{
+    CGRect alienBox = alien.boundingBox;
+    CGPoint alienPoint = alien.position;
+    CGPoint boxPoint1 = alienBox.origin;
+    CGPoint boxPoint2 = CGPointMake( alienBox.origin.x, alienBox.origin.y + alienBox.size.height);
+    CGPoint boxPoint3 = CGPointMake( alienBox.origin.x +alienBox.size.width, alienBox.origin.y);
+    CGPoint boxPoint4 = CGPointMake( alienBox.origin.x +alienBox.size.width, alienBox.origin.y + alienBox.size.height);
+    CGPoint pointArray[4] = {boxPoint1,boxPoint2,boxPoint3,boxPoint4};
+    for (int i = 0; i < sizeof(pointArray); ++i)
+    {
+        CGPoint vertexPoint = ccpAdd(alienPoint, pointArray[i]);
+        if (!CGRectContainsPoint(alienLayer.boundingBox, vertexPoint))
+        {
+            int offset = 5;
+            [alien setPosition: CGPointMake(alien.position.x + offset, alien.position.y + offset)];
+            NSLog(@"yolo");
+            
+        }
+    }
 }
 
 -(Fraction*) newFractionThroughAlien: (int) numAlien {

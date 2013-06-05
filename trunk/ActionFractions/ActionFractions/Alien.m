@@ -210,7 +210,7 @@
         self.sprite.flipX = NO;
         [[self sprite] runAction:moveAction];
         id actionMoveToPoint = [CCMoveTo actionWithDuration:3 position:
-                                   ccp( (arc4random() % (int)(self.position.x-50))+50, (arc4random() % (int)(bounds.height-100))+100)];
+                                   ccp( (arc4random() % (int)(self.position.x-self.sprite.boundingBox.size.width))+self.sprite.boundingBox.size.width, (arc4random() % (int)(bounds.height-self.sprite.boundingBox.size.height))+self.sprite.boundingBox.size.height)];
         id actionMoveFinished = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveFinished:)];
         [[self sprite] runAction:[CCSequence actions:actionMoveToPoint, actionMoveFinished, nil]];
     }
@@ -221,7 +221,7 @@
         self.sprite.flipX = YES;
         [[self sprite] runAction:moveAction];
         id actionMoveToPoint = [CCMoveTo actionWithDuration:3 position:
-                                ccp( (int)self.position.x + (arc4random()  % (int)(bounds.width - self.position.x-50)), (arc4random() % (int)bounds.height-100)+100)];
+                                ccp( (int)self.position.x + (arc4random()  % (int)(bounds.width - self.position.x-self.sprite.boundingBox.size.width)), (arc4random() % (int)bounds.height-self.sprite.boundingBox.size.height)+self.sprite.boundingBox.size.height)];
         id actionMoveFinished = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveFinished:)];
         [[self sprite] runAction:[CCSequence actions:actionMoveToPoint, actionMoveFinished, nil]];
     }
