@@ -33,6 +33,8 @@
     
     CCLabelTTF * scoreLabel;
     
+    CCLabelTTF * targetLabel;
+    
     Alien* currentAlien;
   
     Portal * portal;

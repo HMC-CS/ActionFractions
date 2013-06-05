@@ -76,6 +76,8 @@
         //label.position = position; //this seems to do nothing?
         label.color = ccc3(200,15,225);
         [self addChild: label];
+        
+        self.guessedWrong = NO;
 	}
 	return self;
 }
@@ -119,6 +121,7 @@
     // behavior for when the alien is dropped
     
     [self setTouched: false];
+    self.guessedWrong = NO;
 }
 
 -(void) ccTouchCancelled:(NSSet *)touch withEvent:(UIEvent *)event
