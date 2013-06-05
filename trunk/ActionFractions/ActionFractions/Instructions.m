@@ -32,10 +32,12 @@
         // ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
         
-        // Create Instructions Background
-        CCSprite *background = [CCSprite spriteWithFile:@"full_bg.png"];
-        background.position = ccp( size.width/2, size.height/2);
-        [self addChild:background];
+        CCSprite *backgroundImage = [CCSprite spriteWithFile: @"planet_bg.png"];
+        backgroundImage.scaleX = 2*size.height / backgroundImage.contentSize.height;
+        backgroundImage.scaleY = 2*size.width / backgroundImage.contentSize.width;
+        [backgroundImage setPosition:ccp(500,50)];
+        [self addChild:backgroundImage];
+
         
         // Get the file from the resources
         NSString* path = [[NSBundle mainBundle] pathForResource:@"Instructions" ofType:@"txt"];
@@ -43,7 +45,7 @@
         
         // Create the label to display instructions
         CCLabelTTF *label = [CCLabelTTF labelWithString:fileContents fontName:@"Marker Felt" fontSize:36];
-        [label setColor:ccc3(200, 200, 200)];
+        [label setColor: ccWHITE];
         
         // Position it on the screen
         label.position = ccp(512,384);
@@ -53,7 +55,7 @@
         
         //Create the menu and its items
         [CCMenuItemFont setFontName:@"Marker Felt"];
-        [CCMenuItemFont setFontSize:24];
+        [CCMenuItemFont setFontSize:30];
         
         CCMenuItem *back = [CCMenuItemFont itemWithString:@"Main Menu" block:^(id sender) {
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer node] withColor:ccBLACK]];
@@ -61,6 +63,7 @@
         
         CCMenu* menu = [CCMenu menuWithItems:back, nil];
         menu.position = ccp(size.width/2, size.height/8);
+        //[menu setColor: ccBLACK];
         [self addChild: menu];
         
         return self;

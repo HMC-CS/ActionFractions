@@ -1,14 +1,13 @@
-Funded by NSF grant #1042472, The Games Network: Games for students, games by students (PIs Sweedyk and Erlinger) and by the Dept. of Computer Science, Harvey Mudd College
+Funded by NSF grant #1042472, The Games Network: 
+Games for students, games by students (PIs Sweedyk and Erlinger) 
+and by the Dept. of Computer Science, Harvey Mudd College
 
 CODED BY
-//placeholders 
+INSERT NAMES HERE
 
 ADDITIONAL CODING BY
-Kathryn Aplin, Haley Erickson, Paige Garratt, Azubuike Ndefo-Dahl, Carson Ramsden, and Jean Sung
+Kathryn Aplin, Haley Erickson, Paige Garratt, 
+Azubuike Ndefo-Dahl, Carson Ramsden, and Jean Sung
 
 RESOURCES
-// placeholders
-//
-//
-//
-//
+INSERT NAMES HERE
