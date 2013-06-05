@@ -3,7 +3,7 @@ Games for students, games by students (PIs Sweedyk and Erlinger)
 and by the Dept. of Computer Science, Harvey Mudd College
 
 CODED BY
-INSERT NAMES HERE
+Alistair Dobke, Corinne Druhan, Jake Low, and Seo Park
 
 ADDITIONAL CODING BY
 Kathryn Aplin, Haley Erickson, Paige Garratt, 
