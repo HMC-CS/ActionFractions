@@ -9,7 +9,8 @@
 
 // Import the interfaces
 #import "MenuLayer.h"
-
+#import "Instructions.h"
+#import "Credits.h"
 
 
 #pragma mark - MenuLayer
@@ -71,6 +72,7 @@
     CCLabelTTF * titleLabel = [CCLabelTTF labelWithString:@"Action Fractions" fontName:@"Marker Felt" fontSize:140];
     
     [titleLabel setPosition: ccp(size.width/2, size.height*3/4)];
+    [titleLabel setColor:ccc3(200, 200, 200)];
     [self addChild: titleLabel];
     
     // Menu
@@ -78,24 +80,42 @@
                                   itemWithLabel:[CCLabelTTF labelWithString:@"Level 1" fontName:@"Marker Felt" fontSize:60]
                                   target:self
                                   selector:@selector(startLevelOne)];
-    [level1But setColor:ccc3(200, 200, 200)];
+    [level1But setColor:ccWHITE];
     
     CCMenuItemLabel *level2But = [CCMenuItemLabel
                                   itemWithLabel:[CCLabelTTF labelWithString:@"Level 2" fontName:@"Marker Felt" fontSize:60]
                                   target:self
                                   selector:@selector(startLevelTwo)];
-    [level2But setColor:ccc3(200, 200, 200)];
+    [level2But setColor:ccWHITE];
     
     CCMenuItemLabel *level3But = [CCMenuItemLabel
                                   itemWithLabel:[CCLabelTTF labelWithString:@"Level 3" fontName:@"Marker Felt" fontSize:60]
                                   target:self
                                   selector:@selector(startLevelThree)];
-    [level3But setColor:ccc3(200, 200, 200)];
+    [level3But setColor:ccWHITE];
     
     CCMenu * menu = [CCMenu menuWithItems:level1But,level2But,level3But,nil];
     [menu alignItemsHorizontallyWithPadding:95.0];
     [menu setPosition:ccp(size.width/2,size.height/2)];
     [self addChild:menu];
+    
+    //Second Menu for instructions and credits
+    CCMenuItemLabel *instructions = [CCMenuItemLabel
+                                  itemWithLabel:[CCLabelTTF labelWithString:@"Instructions" fontName:@"Marker Felt" fontSize:60]
+                                  target:self
+                                     selector:@selector(goToInstructions:)];
+    [instructions setColor:ccWHITE];
+    
+    CCMenuItemLabel *credits = [CCMenuItemLabel
+                                  itemWithLabel:[CCLabelTTF labelWithString:@"Credits" fontName:@"Marker Felt" fontSize:60]
+                                  target:self
+                                selector:@selector(goToCredits:)];
+    [credits setColor:ccWHITE];
+    
+    CCMenu * menu2 = [CCMenu menuWithItems:instructions, credits, nil];
+    [menu2 alignItemsHorizontallyWithPadding:95.0];
+    [menu2 setPosition:ccp(size.width/2,size.height/3)];
+    [self addChild:menu2];
      
 }
 
@@ -117,6 +137,14 @@
 -(void) startLevelThree
 {
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[BetaGameLayer sceneWithLevel:3] withColor:ccBLACK]];
+}
+
+-(void) goToInstructions: (id) sender {
+     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[Instructions node] withColor:ccBLACK]];
+}
+
+-(void) goToCredits: (id) sender {
+     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[Credits node] withColor:ccBLACK]];
 }
 
 @end
