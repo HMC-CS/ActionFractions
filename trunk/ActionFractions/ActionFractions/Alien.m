@@ -82,13 +82,13 @@
 
 - (void)onEnter
 {
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 	[super onEnter];
 }
 
 - (void)onExit
 {
-	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+	[[[CCDirector sharedDirector] touchDispatcher] removeDelegate:self];
 	[super onExit];
 }
 
