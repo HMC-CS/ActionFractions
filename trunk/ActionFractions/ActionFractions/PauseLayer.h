@@ -17,10 +17,10 @@
 
 @interface PauseLayer : CCLayerColor {
     
-	PauseLayerProtocol * delegate;
+	PauseLayerProtocol * __weak delegate;
 }
 
-@property (nonatomic,assign)PauseLayerProtocol * delegate;
+@property (nonatomic,weak)PauseLayerProtocol * delegate;
 
 + (id) layerWithColor:(ccColor4B)color delegate:(PauseLayerProtocol *)_delegate;
 - (id) initWithColor:(ccColor4B)c delegate:(PauseLayerProtocol *)_delegate;

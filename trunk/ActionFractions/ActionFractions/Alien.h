@@ -23,9 +23,9 @@ typedef enum alienStateTypes {
 }
 @property bool guessedWrong;
 @property bool isTouched;
-@property (nonatomic, retain) CCAction * moveAction;
-@property (nonatomic, retain) CCAction * stareAction;
-@property (nonatomic, retain) CCAction * fallAction;
+@property (nonatomic, strong) CCAction * moveAction;
+@property (nonatomic, strong) CCAction * stareAction;
+@property (nonatomic, strong) CCAction * fallAction;
 
 -(void) setTouched:(bool) b;
 -(void) updatePositionWithPoint:(CGPoint) location;

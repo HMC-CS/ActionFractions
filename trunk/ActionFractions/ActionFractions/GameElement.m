@@ -30,7 +30,6 @@
 
 -(void) updateValue: (Fraction*) newValue
 {
-    [value release];
     [self setValue: newValue];
     [self updateLabel];
 }
