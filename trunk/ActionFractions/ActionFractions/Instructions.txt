@@ -1,1 +1,5 @@
-INSTRUCTIONS!!!
+When you start the game, a decimal will show up in the portal.
+Drag the alien with the equivalent fraction into the portal. 
+You have 2 minutes to reach the goal score. 
+
+Hint: Getting it right on the first try gives you more points!
