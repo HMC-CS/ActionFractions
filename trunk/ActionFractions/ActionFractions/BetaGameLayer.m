@@ -18,6 +18,7 @@ const int LEVELTIME = 120;
 const int STARTSCORE = 0;
 const int CORRECTPOINTS = 10;
 const int WRONGPOINTS = -5;
+const int LABELFONTSIZE = 30;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -76,7 +77,7 @@ const int WRONGPOINTS = -5;
         
         // set up ui layer
         // pause
-        pauseButton = [CCLabelTTF labelWithString:@"Pause" fontName:@"Marker Felt" fontSize:18];
+        pauseButton = [CCLabelTTF labelWithString:@"Pause" fontName:@"Marker Felt" fontSize:LABELFONTSIZE];
         interfaceLayer = [CCLayerColor layerWithColor:ccc4(0, 0, 50, 55) width:size.width height: pauseButton.contentSize.height];
         interfaceLayer.position = ccp(0,size.height-pauseButton.contentSize.height);
         pauseButton.anchorPoint = ccp(0,0);
@@ -85,7 +86,7 @@ const int WRONGPOINTS = -5;
         
         // Timer
         _countTime = LEVELTIME;
-        timerLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Time: %02d:%02d", self.countTime /60, self.countTime % 60] fontName:@"Marker Felt" fontSize:18];
+        timerLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Time: %02d:%02d", self.countTime /60, self.countTime % 60] fontName:@"Marker Felt" fontSize:LABELFONTSIZE];
         timerLabel.anchorPoint = ccp(0,0);
         timerLabel.position = ccp(0,0);
         [interfaceLayer addChild:timerLabel];
@@ -93,11 +94,20 @@ const int WRONGPOINTS = -5;
         
         // Score
         _score = STARTSCORE;
-        scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %d", self.score] fontName:@"Marker Felt" fontSize:18];
+        scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %d", self.score] fontName:@"Marker Felt" fontSize:LABELFONTSIZE];
         NSLog(@"%d", self.score);
         scoreLabel.anchorPoint = ccp(0,0);
-        scoreLabel.position = ccp(size.width/2.0, 0);
+        scoreLabel.position = ccp(3.0*size.width/4.0 - scoreLabel.contentSize.width, 0);
         [interfaceLayer addChild:scoreLabel];
+        
+        
+        //Target
+        targetLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Goal: %d", [self targetScore]] fontName:@"Marker Felt" fontSize:LABELFONTSIZE];
+        targetLabel.anchorPoint = ccp(0,0);
+        targetLabel.position = ccp(size.width/4.0, 0);
+        [interfaceLayer addChild:targetLabel];
+        
+        
         
         // Set up alien layer
         alienLayer = [CCLayerColor layerWithColor:ccc4(0, 100, 0, 0) width:size.width height:size.height/2 - 30];
@@ -185,6 +195,7 @@ const int WRONGPOINTS = -5;
     // increments score and updates score display
     
     self.score += points;
+    if (self.score < 0) self.score = 0;
     [scoreLabel setString:[NSString stringWithFormat:@"Score: %d", self.score]];
 }
 
@@ -290,6 +301,14 @@ const int WRONGPOINTS = -5;
             } else {
                 [simpleAudioEngine playEffect:@"uhoh.mp3"];
                 [[aliens[i] sprite] setColor: ccc3(255,0,0)];
+                
+                if (!aliens[i].guessedWrong)
+                {
+                    aliens[i].guessedWrong = YES;
+                    [self updateScore:WRONGPOINTS];
+                }
+                //aliens[i].guessedWrong = YES;
+                //[aliens[i] setTouched:false];
             }
         }
     }
