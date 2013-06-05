@@ -299,13 +299,14 @@ const int LABELFONTSIZE = 30;
                 [portal updateLabel];
   
             } else {
-                [simpleAudioEngine playEffect:@"uhoh.mp3"];
                 [[aliens[i] sprite] setColor: ccc3(255,0,0)];
                 
                 if (!aliens[i].guessedWrong)
                 {
                     aliens[i].guessedWrong = YES;
                     [self updateScore:WRONGPOINTS];
+                    [simpleAudioEngine playEffect:@"uhoh.mp3"];
+
                 }
                 //aliens[i].guessedWrong = YES;
                 //[aliens[i] setTouched:false];
