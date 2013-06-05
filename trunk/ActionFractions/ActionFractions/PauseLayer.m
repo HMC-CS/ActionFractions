@@ -15,7 +15,7 @@
 
 + (id) layerWithColor:(ccColor4B)color delegate:(id)_delegate
 {
-	return [[[self alloc] initWithColor:color delegate:_delegate] autorelease];
+	return [[self alloc] initWithColor:color delegate:_delegate];
 }
 
 - (id) initWithColor:(ccColor4B)c delegate:(id)_delegate {
@@ -68,9 +68,5 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene] withColor:ccBLACK]];
 }
 
--(void)dealloc
-{
-	[super dealloc];
-}
 
 @end

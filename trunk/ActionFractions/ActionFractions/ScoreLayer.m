@@ -14,7 +14,7 @@
 
 + (id) layerWithColor:(ccColor4B)color delegate:(id)_delegate score:(int) s target:(int) t diff:(int) d
 {
-	return [[[self alloc] initWithColor:color delegate:_delegate score:s target:t diff:d] autorelease];
+	return [[self alloc] initWithColor:color delegate:_delegate score:s target:t diff:d];
 }
 
 - (id) initWithColor:(ccColor4B)c delegate:(id)_delegate score:(int) s target:(int) t diff:(int) d
@@ -84,10 +84,6 @@
 }
 
 
--(void)dealloc
-{
-	[super dealloc];
-}
 
 -(void) playNextLevel: (id) sender
 {
