@@ -157,4 +157,28 @@
      
     return false;
 }
+
+/* isRepeating checks if the decimal version of a fraction is repeating.
+ This method compares the numbers in the 9th through 15th places in the
+ decimal and returns true if these are all the same
+*/
+-(BOOL) isRepeating{
+    float decimal = numerator/ (float)denominator;
+    NSString* stringDec = [[NSString alloc] initWithFormat:@"%f", decimal];
+    if(stringDec.length<8){
+        return FALSE;
+    }
+    NSString* holdRepeat = [stringDec substringWithRange:NSMakeRange(3, 1)];
+    NSString *zero = [[NSString alloc] initWithFormat:@"%d", 0];
+    if ([holdRepeat isEqualToString: zero]) {
+        return FALSE;
+    }
+    for (int i=3; i<5; i++) {
+        NSString* temp = [stringDec substringWithRange:NSMakeRange(i, 1)];
+        if (![temp isEqualToString:holdRepeat]) {
+            return FALSE;
+        }
+    }
+    return TRUE;
+}
 @end

@@ -31,5 +31,6 @@
 -(double) decimalValue;
 -(bool) exactlyEquals:(Fraction*)fraction;
 -(bool) equals:(Fraction *) f;
+-(BOOL) isRepeating;
 
 @end
