@@ -536,10 +536,8 @@
 				846081A316715F8A00EE6EEA /* ScoreLayer.m */,
 				84691F1C1641FCED00EED630 /* AppDelegate.h */,
 				84691F1D1641FCED00EED630 /* AppDelegate.m */,
-				0A977584175FDEF7002D70C0 /* Credits.txt */,
 				0A977585175FDEF7002D70C0 /* Credits.h */,
 				0A977586175FDEF7002D70C0 /* Credits.m */,
-				0A977587175FDEF7002D70C0 /* Instructions.txt */,
 				0A977588175FDEF7002D70C0 /* Instructions.h */,
 				0A977589175FDEF7002D70C0 /* Instructions.m */,
 				84691DA51641FCEA00EED630 /* Resources */,
@@ -552,6 +550,8 @@
 		84691DA51641FCEA00EED630 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0A977584175FDEF7002D70C0 /* Credits.txt */,
+				0A977587175FDEF7002D70C0 /* Instructions.txt */,
 				8409D7F7165256B000B23874 /* alien1_default.plist */,
 				8409D7F8165256B000B23874 /* alien1_default.png */,
 				8409D7EB165251E200B23874 /* alien1_fall.plist */,
