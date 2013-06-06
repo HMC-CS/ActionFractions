@@ -19,6 +19,7 @@
 
 - (id) initWithColor:(ccColor4B)c delegate:(id)_delegate score:(int) s target:(int) t diff:(int) d
 {
+    NSAssert(delegate!=nil && s>=0 && t>=0 && d>=1 && d<=3, @"Score Layer initialization failed");
     self = [super initWithColor:c];
     if (self != nil) {
         
@@ -30,14 +31,14 @@
         self->difficulty = d;
         
         
-        NSString * playString = [[NSString alloc] initWithString:@"Retry"];
+        NSString * playString = [[NSString alloc] initWithFormat:@"Retry"];
         
         if (s >= t && d < 3) {
-            playString = [[NSString alloc] initWithString:@"Continue"];
+            playString = [[NSString alloc] initWithFormat:@"Continue"];
         }
 
         if (s >= t && d == 3) {
-            playString = [[NSString alloc] initWithString:@"You Won!"];
+            playString = [[NSString alloc] initWithFormat:@"You Won!"];
         }
         
 		CCMenuItemImage * play = [CCMenuItemLabel itemWithLabel:

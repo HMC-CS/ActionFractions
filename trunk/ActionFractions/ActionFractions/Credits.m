@@ -41,6 +41,7 @@
         
         // Get the file from the resources
         NSString* path = [[NSBundle mainBundle] pathForResource:@"Credits" ofType:@"txt"];
+        NSAssert(path != nil, @"Credits file could not be found");
         NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         
         // Create the label to display instructions

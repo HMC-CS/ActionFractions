@@ -17,6 +17,7 @@
 
 - (id) initWithNum:(short) n andDenom:(short) d
 {
+    NSAssert(n!=0 && d!=0, @"Failed to initalize Fraction with numerator and/or denominator");
     if (self=[super init]) {
         numerator = n;
         denominator = d;
