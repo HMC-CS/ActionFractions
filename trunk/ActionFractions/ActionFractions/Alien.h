@@ -30,5 +30,6 @@ typedef enum alienStateTypes {
 -(void) setTouched:(bool) b;
 -(void) updatePositionWithPoint:(CGPoint) location;
 -(void) spriteMoveFinished:(id) sender;
+-(void) checkAliensBounds;
 
 @end

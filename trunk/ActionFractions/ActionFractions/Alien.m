@@ -49,7 +49,7 @@
         for(int i = 1; i <= 2; ++i) {
             [fallAnimFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fall%d.png", i]]];
         }
-        
+        [self checkAliensBounds];
         
         // set animations from the frames
         CCAnimation * moveAnim = [CCAnimation animationWithSpriteFrames:moveAnimFrames delay:0.1f];
@@ -111,7 +111,7 @@
 -(void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
     // behavior for when the alien is moved
-    
+    [self checkAliensBounds];
     CGPoint location = [self convertTouchToNodeSpace:touch];
     [self updatePositionWithPoint: location];
 }
@@ -129,6 +129,29 @@
     [self setTouched: false];
 }
 
+
+-(void) checkAliensBounds
+{
+    CGRect alienBox = self.sprite.boundingBox;
+    CGPoint alienPoint = self.sprite.position;
+    CGPoint boxPoint1 = alienBox.origin;
+    CGPoint boxPoint2 = CGPointMake( alienBox.origin.x, alienBox.origin.y + alienBox.size.height);
+    CGPoint boxPoint3 = CGPointMake( alienBox.origin.x +alienBox.size.width, alienBox.origin.y);
+    CGPoint boxPoint4 = CGPointMake( alienBox.origin.x +alienBox.size.width, alienBox.origin.y + alienBox.size.height);
+    CGPoint pointArray[4] = {boxPoint1,boxPoint2,boxPoint3,boxPoint4};
+    CGRect boundRect = [[UIScreen mainScreen]bounds];
+    for (int i = 0; i < sizeof(pointArray); ++i)
+    {
+        CGPoint vertexPoint = ccpAdd(alienPoint, pointArray[i]);
+        if (!CGRectContainsPoint(boundRect, vertexPoint))
+        {
+            int offset = 5;
+            [self.sprite setPosition: CGPointMake(self.sprite.position.x + offset, self.sprite.position.y + offset)];
+            NSLog(@"yolo");
+            
+        }
+    }
+}
 
 -(void) updatePositionWithPoint:(CGPoint) location
 {
@@ -193,6 +216,7 @@
 {
     // sets animation based on state. This function is only called on state change, not at every update.
     
+    
     if (state == STARING) {
         [[self sprite] stopAllActions];
         self.sprite.flipX = NO;
@@ -231,6 +255,8 @@
 
 -(void) spriteMoveFinished:(id) sender
 {
+    //[self checkAliensBounds];
+    
     state = STARING;
     [[self sprite] stopAllActions];
     [[self sprite] runAction:stareAction];

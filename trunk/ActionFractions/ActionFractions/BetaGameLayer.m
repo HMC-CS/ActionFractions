@@ -262,27 +262,7 @@ const int LABELFONTSIZE = 30;
 
 }
 
--(void) checkAliensBounds: (Alien*) alien
-{
-    CGRect alienBox = alien.boundingBox;
-    CGPoint alienPoint = alien.position;
-    CGPoint boxPoint1 = alienBox.origin;
-    CGPoint boxPoint2 = CGPointMake( alienBox.origin.x, alienBox.origin.y + alienBox.size.height);
-    CGPoint boxPoint3 = CGPointMake( alienBox.origin.x +alienBox.size.width, alienBox.origin.y);
-    CGPoint boxPoint4 = CGPointMake( alienBox.origin.x +alienBox.size.width, alienBox.origin.y + alienBox.size.height);
-    CGPoint pointArray[4] = {boxPoint1,boxPoint2,boxPoint3,boxPoint4};
-    for (int i = 0; i < sizeof(pointArray); ++i)
-    {
-        CGPoint vertexPoint = ccpAdd(alienPoint, pointArray[i]);
-        if (!CGRectContainsPoint(alienLayer.boundingBox, vertexPoint))
-        {
-            int offset = 5;
-            [alien setPosition: CGPointMake(alien.position.x + offset, alien.position.y + offset)];
-            NSLog(@"yolo");
-            
-        }
-    }
-}
+
 
 -(Fraction*) newFractionThroughAlien: (int) numAlien {
     
