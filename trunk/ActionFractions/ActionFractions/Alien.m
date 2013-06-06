@@ -145,8 +145,10 @@
         CGPoint vertexPoint = ccpAdd(alienPoint, pointArray[i]);
         if (!CGRectContainsPoint(boundRect, vertexPoint))
         {
-            int offset = 5;
-            [self.sprite setPosition: CGPointMake(self.sprite.position.x + offset, self.sprite.position.y + offset)];
+            int offset = 15;
+            [self updatePositionWithPoint:CGPointMake(self.sprite.position.x + offset, self.sprite.position.y + offset)];
+          
+            //[self.sprite setPosition: CGPointMake(self.sprite.position.x + offset, self.sprite.position.y + offset)];
             NSLog(@"yolo");
             
         }
@@ -255,7 +257,7 @@
 
 -(void) spriteMoveFinished:(id) sender
 {
-    //[self checkAliensBounds];
+    [self checkAliensBounds];
     
     state = STARING;
     [[self sprite] stopAllActions];
