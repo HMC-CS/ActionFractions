@@ -136,8 +136,8 @@ const int LABELFONTSIZE = 30;
         simpleAudioEngine = [SimpleAudioEngine sharedEngine];
         [simpleAudioEngine preloadBackgroundMusic:@"bgMusic.caf"];
         [simpleAudioEngine preloadEffect:@"scream.mp3"];
-        [simpleAudioEngine preloadEffect:@"yeay.mp3"];
-        [simpleAudioEngine preloadEffect:@"uhoh.mp3"];
+        [simpleAudioEngine preloadEffect:@"yipee.wav"];
+        [simpleAudioEngine preloadEffect:@"uhoh.aiff"];
         [simpleAudioEngine playBackgroundMusic:@"bgMusic.caf"];
         [simpleAudioEngine setBackgroundMusicVolume:0.5f]; // slightly lower volume for other sound effects
         [simpleAudioEngine setEffectsVolume:1.5f];
@@ -284,7 +284,7 @@ const int LABELFONTSIZE = 30;
         [aliens[i] updatePosition: dT givenBounds: CGSizeMake(alienLayer.contentSize.width, alienLayer.contentSize.height-35)];
         if ( aliens[i].isTouched && CGRectContainsPoint([[portal sprite] boundingBox], [aliens[i] sprite].position)) {
             if ([[portal value] equals: [aliens[i] value]]) {
-                [simpleAudioEngine playEffect:@"yeay.mp3"]; // play happy soundeffect
+                [simpleAudioEngine playEffect:@"yipee.wav"]; // play happy soundeffect
                 [self updateScore:CORRECTPOINTS]; // increase score
                 short alienIndex = arc4random()%NUMALIENS;
                 bool foundDifferentFraction = false;
@@ -307,7 +307,7 @@ const int LABELFONTSIZE = 30;
                 {
                     aliens[i].guessedWrong = YES;
                     [self updateScore:WRONGPOINTS];
-                    [simpleAudioEngine playEffect:@"uhoh.mp3"];
+                    [simpleAudioEngine playEffect:@"uhoh.aiff"];
 
                 }
                 //aliens[i].guessedWrong = YES;
