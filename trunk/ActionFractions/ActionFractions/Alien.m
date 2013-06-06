@@ -17,6 +17,8 @@
 
 -(id) initWithValue:(Fraction*) f andPosition:(CGPoint) pos
 {
+    CGSize winSize = [[CCDirector sharedDirector]winSize];
+    NSAssert(f!=nil && pos.y<=winSize.height && pos.x<=winSize.width, @"Failed to initialize Alien with Fraction and/or position");
 	if( (self=[super init]) ) {
         [self setValue:f];
         position = pos;
@@ -149,7 +151,7 @@
             [self updatePositionWithPoint:CGPointMake(self.sprite.position.x + offset, self.sprite.position.y + offset)];
           
             //[self.sprite setPosition: CGPointMake(self.sprite.position.x + offset, self.sprite.position.y + offset)];
-            NSLog(@"yolo");
+            //NSLog(@"yolo");
             
         }
     }
@@ -217,7 +219,6 @@
 -(void) updateAnimationWithBounds: (CGSize) bounds
 {
     // sets animation based on state. This function is only called on state change, not at every update.
-    
     
     if (state == STARING) {
         [[self sprite] stopAllActions];

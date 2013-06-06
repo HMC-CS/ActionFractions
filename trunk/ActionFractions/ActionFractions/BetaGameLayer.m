@@ -38,8 +38,7 @@ const int LABELFONTSIZE = 30;
 
 +(CCScene *) sceneWithLevel: (int) level
 {
-    
-       
+    NSAssert((level>=1 && level<=3), @"Not given a valid level");
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 	
@@ -136,9 +135,9 @@ const int LABELFONTSIZE = 30;
         [CDAudioManager initAsynchronously:kAMM_MediaPlayback]; // Plays music whether ipad is mute or not
         simpleAudioEngine = [SimpleAudioEngine sharedEngine];
         [simpleAudioEngine preloadBackgroundMusic:@"bgMusic.caf"];
-        [simpleAudioEngine preloadBackgroundMusic:@"scream.mp3"];
-        [simpleAudioEngine preloadBackgroundMusic:@"yeay.mp3"];
-        [simpleAudioEngine preloadBackgroundMusic:@"uhoh.mp3"];
+        [simpleAudioEngine preloadEffect:@"scream.mp3"];
+        [simpleAudioEngine preloadEffect:@"yeay.mp3"];
+        [simpleAudioEngine preloadEffect:@"uhoh.mp3"];
         [simpleAudioEngine playBackgroundMusic:@"bgMusic.caf"];
         [simpleAudioEngine setBackgroundMusicVolume:0.5f]; // slightly lower volume for other sound effects
         [simpleAudioEngine setEffectsVolume:1.5f];
@@ -287,7 +286,6 @@ const int LABELFONTSIZE = 30;
             if ([[portal value] equals: [aliens[i] value]]) {
                 [simpleAudioEngine playEffect:@"yeay.mp3"]; // play happy soundeffect
                 [self updateScore:CORRECTPOINTS]; // increase score
-                NSLog(@"%d", self.score);
                 short alienIndex = arc4random()%NUMALIENS;
                 bool foundDifferentFraction = false;
                 [aliens[i] updatePositionWithPoint: CGPointMake(arc4random() % (int)alienLayer.contentSize.width
