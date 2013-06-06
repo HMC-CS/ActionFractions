@@ -253,8 +253,15 @@ const int LABELFONTSIZE = 30;
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-
-    
+//    for(int i =0; i < NUMALIENS; ++i) {
+//        for(int j =0; j < NUMALIENS; ++j)
+//        {
+//            NSLog(@"overlapp");
+//            [aliens[j] checkCollisions:aliens[i]];
+//            [aliens[i] checkCollisions:aliens[j]];
+//        }
+//    }
+//    
 }
 
 -(void) ccTouchCancelled:(NSSet *)touch withEvent:(UIEvent *)event

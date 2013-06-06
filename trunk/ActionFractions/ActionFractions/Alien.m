@@ -149,11 +149,37 @@
             [self updatePositionWithPoint:CGPointMake(self.sprite.position.x + offset, self.sprite.position.y + offset)];
           
             //[self.sprite setPosition: CGPointMake(self.sprite.position.x + offset, self.sprite.position.y + offset)];
-            NSLog(@"yolo");
             
         }
     }
 }
+
+//-(void) checkCollisions: (Alien*) alien
+//{
+//    CGRect alienBox = self.sprite.boundingBox;
+//    CGPoint alienPoint = self.sprite.position;
+//
+//    
+//    CGRect alienBox2 = alien.sprite.boundingBox;
+//    CGPoint alienPoint2 = alien.sprite.position;
+//    CGPoint boxPoint1 = alienBox2.origin;
+//    CGPoint boxPoint2 = CGPointMake( alienBox2.origin.x, alienBox2.origin.y + alienBox2.size.height);
+//    CGPoint boxPoint3 = CGPointMake( alienBox2.origin.x +alienBox2.size.width, alienBox2.origin.y);
+//    CGPoint boxPoint4 = CGPointMake( alienBox2.origin.x +alienBox2.size.width, alienBox2.origin.y + alienBox2.size.height);
+//    CGPoint pointArray2[4] = {boxPoint1,boxPoint2,boxPoint3,boxPoint4};
+//    
+//    for (int i = 0; i < sizeof(pointArray2); ++i)
+//    {
+//        CGPoint vertexPoint = ccpAdd(alienPoint2, pointArray2[i]);
+//        if (!CGRectContainsPoint(alienBox, vertexPoint))
+//        {
+//            int offset = 25;
+//            [self updatePositionWithPoint:CGPointMake(self.sprite.position.x + offset, self.sprite.position.y + offset)];
+//            [alien updatePositionWithPoint:CGPointMake(alien.sprite.position.x - offset, alien.sprite.position.y - offset)];
+//    }
+//    }
+//    
+//}
 
 -(void) updatePositionWithPoint:(CGPoint) location
 {
@@ -217,7 +243,6 @@
 -(void) updateAnimationWithBounds: (CGSize) bounds
 {
     // sets animation based on state. This function is only called on state change, not at every update.
-    
     
     if (state == STARING) {
         [[self sprite] stopAllActions];
