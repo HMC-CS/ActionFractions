@@ -14,6 +14,8 @@
 
 -(id) initWithValue:(Fraction*) f andPosition:(CGPoint) pos
 {
+    CGSize winSize = [[CCDirector sharedDirector]winSize];
+    NSAssert(f!=nil && pos.y<=winSize.height && pos.x<=winSize.width, @"Failed to initialize GameElement with Fraction and/or position");
 
 	if( (self=[super init]) ) {
         value = f;

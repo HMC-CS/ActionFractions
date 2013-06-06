@@ -41,6 +41,7 @@
         
         // Get the file from the resources
         NSString* path = [[NSBundle mainBundle] pathForResource:@"Instructions" ofType:@"txt"];
+        NSAssert(path !=nil, @"Cannot find Instructions file");
         NSString* fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         
         // Create the label to display instructions
