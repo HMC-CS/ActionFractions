@@ -159,7 +159,7 @@
 		8493B621164788ED0071B32C /* full_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8493B620164788ED0071B32C /* full_bg.png */; };
 		84D37D9C1642717600B79F91 /* portal1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D37D9B1642717600B79F91 /* portal1.png */; };
 		EF66CB5A17610A9800E82252 /* uhoh.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EF66CB5817610A9800E82252 /* uhoh.aiff */; };
-		EF66CB5B17610A9800E82252 /* yahoo.wav in Resources */ = {isa = PBXBuildFile; fileRef = EF66CB5917610A9800E82252 /* yahoo.wav */; };
+		EF66CB5B17610A9800E82252 /* yipee.wav in Resources */ = {isa = PBXBuildFile; fileRef = EF66CB5917610A9800E82252 /* yipee.wav */; };
 		FDB7B665176124DA00CCAF3F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB7B664176124DA00CCAF3F /* SenTestingKit.framework */; };
 		FDB7B666176124DA00CCAF3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84691D9C1641FCEA00EED630 /* UIKit.framework */; };
 		FDB7B667176124DA00CCAF3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84691D9E1641FCEA00EED630 /* Foundation.framework */; };
@@ -464,7 +464,7 @@
 		8493B620164788ED0071B32C /* full_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_bg.png; path = Resources/full_bg.png; sourceTree = "<group>"; };
 		84D37D9B1642717600B79F91 /* portal1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = portal1.png; sourceTree = "<group>"; };
 		EF66CB5817610A9800E82252 /* uhoh.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = uhoh.aiff; path = Resources/uhoh.aiff; sourceTree = "<group>"; };
-		EF66CB5917610A9800E82252 /* yahoo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = yahoo.wav; path = Resources/yahoo.wav; sourceTree = "<group>"; };
+		EF66CB5917610A9800E82252 /* yipee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = yipee.wav; path = Resources/yipee.wav; sourceTree = "<group>"; };
 		FDB7B663176124DA00CCAF3F /* ActionFractionsTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionFractionsTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB7B664176124DA00CCAF3F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		FDB7B66A176124DA00CCAF3F /* ActionFractionsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActionFractionsTest-Info.plist"; sourceTree = "<group>"; };
@@ -589,7 +589,7 @@
 				84608195167011D800EE6EEA /* bgMusic.caf */,
 				8460818F1670099600EE6EEA /* bgMusic.mp3 */,
 				EF66CB5817610A9800E82252 /* uhoh.aiff */,
-				EF66CB5917610A9800E82252 /* yahoo.wav */,
+				EF66CB5917610A9800E82252 /* yipee.wav */,
 				84691DA81641FCEA00EED630 /* Default-Landscape~ipad.png */,
 				84691DA61641FCEA00EED630 /* Default.png */,
 				84691DAC1641FCEA00EED630 /* fps_images-hd.png */,
@@ -1074,7 +1074,7 @@
 				0A97758A175FDEF7002D70C0 /* Credits.txt in Resources */,
 				0A97758C175FDEF7002D70C0 /* Instructions.txt in Resources */,
 				EF66CB5A17610A9800E82252 /* uhoh.aiff in Resources */,
-				EF66CB5B17610A9800E82252 /* yahoo.wav in Resources */,
+				EF66CB5B17610A9800E82252 /* yipee.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1425,6 +1425,7 @@
 				FDB7B673176124DA00CCAF3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
