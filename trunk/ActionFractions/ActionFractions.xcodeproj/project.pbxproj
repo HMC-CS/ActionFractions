@@ -160,11 +160,6 @@
 		84D37D9C1642717600B79F91 /* portal1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D37D9B1642717600B79F91 /* portal1.png */; };
 		EF66CB5A17610A9800E82252 /* uhoh.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EF66CB5817610A9800E82252 /* uhoh.aiff */; };
 		EF66CB5B17610A9800E82252 /* yipee.wav in Resources */ = {isa = PBXBuildFile; fileRef = EF66CB5917610A9800E82252 /* yipee.wav */; };
-		FDB7B665176124DA00CCAF3F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB7B664176124DA00CCAF3F /* SenTestingKit.framework */; };
-		FDB7B666176124DA00CCAF3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84691D9C1641FCEA00EED630 /* UIKit.framework */; };
-		FDB7B667176124DA00CCAF3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84691D9E1641FCEA00EED630 /* Foundation.framework */; };
-		FDB7B66D176124DA00CCAF3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDB7B66B176124DA00CCAF3F /* InfoPlist.strings */; };
-		FDB7B670176124DA00CCAF3F /* ActionFractionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB7B66F176124DA00CCAF3F /* ActionFractionsTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -465,7 +460,6 @@
 		84D37D9B1642717600B79F91 /* portal1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = portal1.png; sourceTree = "<group>"; };
 		EF66CB5817610A9800E82252 /* uhoh.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = uhoh.aiff; path = Resources/uhoh.aiff; sourceTree = "<group>"; };
 		EF66CB5917610A9800E82252 /* yipee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = yipee.wav; path = Resources/yipee.wav; sourceTree = "<group>"; };
-		FDB7B663176124DA00CCAF3F /* ActionFractionsTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionFractionsTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB7B664176124DA00CCAF3F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		FDB7B66A176124DA00CCAF3F /* ActionFractionsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActionFractionsTest-Info.plist"; sourceTree = "<group>"; };
 		FDB7B66C176124DA00CCAF3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -491,16 +485,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDB7B65F176124DA00CCAF3F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FDB7B665176124DA00CCAF3F /* SenTestingKit.framework in Frameworks */,
-				FDB7B666176124DA00CCAF3F /* UIKit.framework in Frameworks */,
-				FDB7B667176124DA00CCAF3F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -518,7 +502,6 @@
 			isa = PBXGroup;
 			children = (
 				84691D8E1641FCEA00EED630 /* ActionFractions.app */,
-				FDB7B663176124DA00CCAF3F /* ActionFractionsTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -994,24 +977,6 @@
 			productReference = 84691D8E1641FCEA00EED630 /* ActionFractions.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FDB7B662176124DA00CCAF3F /* ActionFractionsTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FDB7B674176124DA00CCAF3F /* Build configuration list for PBXNativeTarget "ActionFractionsTest" */;
-			buildPhases = (
-				FDB7B65E176124DA00CCAF3F /* Sources */,
-				FDB7B65F176124DA00CCAF3F /* Frameworks */,
-				FDB7B660176124DA00CCAF3F /* Resources */,
-				FDB7B661176124DA00CCAF3F /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ActionFractionsTest;
-			productName = ActionFractionsTest;
-			productReference = FDB7B663176124DA00CCAF3F /* ActionFractionsTest.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1033,7 +998,6 @@
 			projectRoot = "";
 			targets = (
 				84691D8D1641FCEA00EED630 /* ActionFractions */,
-				FDB7B662176124DA00CCAF3F /* ActionFractionsTest */,
 			);
 		};
 /* End PBXProject section */
@@ -1078,31 +1042,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDB7B660176124DA00CCAF3F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FDB7B66D176124DA00CCAF3F /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		FDB7B661176124DA00CCAF3F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84691D8A1641FCEA00EED630 /* Sources */ = {
@@ -1224,14 +1164,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDB7B65E176124DA00CCAF3F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FDB7B670176124DA00CCAF3F /* ActionFractionsTest.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -1348,55 +1280,6 @@
 			};
 			name = Release;
 		};
-		FDB7B672176124DA00CCAF3F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ActionFractionsTest/ActionFractionsTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ActionFractionsTest/ActionFractionsTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		FDB7B673176124DA00CCAF3F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ActionFractionsTest/ActionFractionsTest-Prefix.pch";
-				INFOPLIST_FILE = "ActionFractionsTest/ActionFractionsTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1414,15 +1297,6 @@
 			buildConfigurations = (
 				84691F281641FCED00EED630 /* Debug */,
 				84691F291641FCED00EED630 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FDB7B674176124DA00CCAF3F /* Build configuration list for PBXNativeTarget "ActionFractionsTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FDB7B672176124DA00CCAF3F /* Debug */,
-				FDB7B673176124DA00CCAF3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
