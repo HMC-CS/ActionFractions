@@ -136,11 +136,11 @@ const int LABELFONTSIZE = 30;
         simpleAudioEngine = [SimpleAudioEngine sharedEngine];
         [simpleAudioEngine preloadBackgroundMusic:@"bgMusic.caf"];
         [simpleAudioEngine preloadEffect:@"scream.mp3"];
-        [simpleAudioEngine preloadEffect:@"yipee.wav"];
-        [simpleAudioEngine preloadEffect:@"uhoh.aiff"];
+        [simpleAudioEngine preloadEffect:@"phaserUp4.mp3"];
+        [simpleAudioEngine preloadEffect:@"zap2.mp3"];
         [simpleAudioEngine playBackgroundMusic:@"bgMusic.caf"];
-        [simpleAudioEngine setBackgroundMusicVolume:0.5f]; // slightly lower volume for other sound effects
-        [simpleAudioEngine setEffectsVolume:1.5f];
+        [simpleAudioEngine setBackgroundMusicVolume:1.0f]; // slightly lower volume for other sound effects
+        [simpleAudioEngine setEffectsVolume:3.0f];
         
         // Game loop update
         [self schedule:@selector(gameLoop:) interval: 1/60.0f];
@@ -284,7 +284,7 @@ const int LABELFONTSIZE = 30;
         [aliens[i] updatePosition: dT givenBounds: CGSizeMake(alienLayer.contentSize.width, alienLayer.contentSize.height-35)];
         if ( aliens[i].isTouched && CGRectContainsPoint([[portal sprite] boundingBox], [aliens[i] sprite].position)) {
             if ([[portal value] equals: [aliens[i] value]]) {
-                [simpleAudioEngine playEffect:@"yipee.wav"]; // play happy soundeffect
+                [simpleAudioEngine playEffect:@"phaserUp4.mp3"]; // play happy soundeffect
                 [self updateScore:CORRECTPOINTS]; // increase score
                 short alienIndex = arc4random()%NUMALIENS;
                 bool foundDifferentFraction = false;
@@ -307,7 +307,7 @@ const int LABELFONTSIZE = 30;
                 {
                     aliens[i].guessedWrong = YES;
                     [self updateScore:WRONGPOINTS];
-                    [simpleAudioEngine playEffect:@"uhoh.aiff"];
+                    [simpleAudioEngine playEffect:@"zap2.mp3"];
 
                 }
                 //aliens[i].guessedWrong = YES;
