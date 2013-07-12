@@ -19,10 +19,14 @@
 
 - (id) initWithColor:(ccColor4B)c delegate:(id)_delegate score:(int) s target:(int) t diff:(int) d
 {
-    NSAssert(delegate!=nil && s>=0 && t>=0 && d>=1 && d<=3, @"Score Layer initialization failed");
+
+    NSAssert(s>=0, @"s is not >= 0");
+    NSAssert(t>=0,@"t is not >=0");
+    NSAssert(d>=1,@"d is not at least 1");
+    NSAssert(d<=3,@"d is greater than 3");
     self = [super initWithColor:c];
     if (self != nil) {
-        
+        NSLog(@"self != nil");
 		CGSize wins = [[CCDirector sharedDirector] winSize];
         
 		delegate = _delegate;
