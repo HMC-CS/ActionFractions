@@ -1237,6 +1237,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Elizabeth Sweedyk (AB8W7DKVQM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Elizabeth Sweedyk (AB8W7DKVQM)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1251,6 +1253,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "711422CA-356B-4360-B9A2-7A2C755578D4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "711422CA-356B-4360-B9A2-7A2C755578D4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "armv7 armv7s $(ARCHS_STANDARD_32_BIT)";
@@ -1263,6 +1267,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Elizabeth Sweedyk (AB8W7DKVQM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Elizabeth Sweedyk (AB8W7DKVQM)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ActionFractions/Prefix.pch;
@@ -1276,6 +1282,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "711422CA-356B-4360-B9A2-7A2C755578D4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "711422CA-356B-4360-B9A2-7A2C755578D4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
